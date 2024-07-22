@@ -1,0 +1,70 @@
+<div class="container mt-5">
+  <h2>Register</h2>
+  <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="nombres">Nombres</label>
+      <input type="text" id="nombres" class="form-control" formControlName="nombres" [ngClass]="{ 'is-invalid': registerForm.get('nombres')?.invalid && registerForm.get('nombres')?.touched }">
+      <div *ngIf="registerForm.get('nombres')?.invalid && registerForm.get('nombres')?.touched" class="invalid-feedback">
+        Nombres es requerido.
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="apellidos">Apellidos</label>
+      <input type="text" id="apellidos" class="form-control" formControlName="apellidos" [ngClass]="{ 'is-invalid': registerForm.get('apellidos')?.invalid && registerForm.get('apellidos')?.touched }">
+      <div *ngIf="registerForm.get('apellidos')?.invalid && registerForm.get('apellidos')?.touched" class="invalid-feedback">
+        Apellidos es requerido.
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="tipoIdentificacion">Tipo Identificación</label>
+      <select id="tipoIdentificacion" class="form-control" formControlName="tipoIdentificacion" [ngClass]="{ 'is-invalid': registerForm.get('tipoIdentificacion')?.invalid && registerForm.get('tipoIdentificacion')?.touched }">
+        <option value="" disabled selected>Seleccione un tipo de identificación</option>
+        <option value="CC">Cédula de Ciudadanía</option>
+        <option value="TI">Tarjeta de Identidad</option>
+        <option value="CE">Cédula de Extranjería</option>
+      </select>
+      <div *ngIf="registerForm.get('tipoIdentificacion')?.invalid && registerForm.get('tipoIdentificacion')?.touched" class="invalid-feedback">
+        Tipo Identificación es requerido.
+      </div>
+    </div>
+
+
+    <div class="form-group">
+      <label for="numeroIdentificacion">Número de Identificación</label>
+      <input type="text" id="numeroIdentificacion" class="form-control" formControlName="numeroIdentificacion" [ngClass]="{ 'is-invalid': registerForm.get('numeroIdentificacion')?.invalid && registerForm.get('numeroIdentificacion')?.touched }">
+      <div *ngIf="registerForm.get('numeroIdentificacion')?.invalid && registerForm.get('numeroIdentificacion')?.touched" class="invalid-feedback">
+        Número de Identificación es requerido.
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" id="email" class="form-control" formControlName="email" [ngClass]="{ 'is-invalid': registerForm.get('email')?.invalid && registerForm.get('email')?.touched }">
+      <div *ngIf="registerForm.get('email')?.invalid && registerForm.get('email')?.touched" class="invalid-feedback">
+        Email es requerido y debe ser válido.
+      </div>
+    </div>
+
+
+    <div class="form-group">
+      <label for="usuario">Usuario</label>
+      <input type="text" id="usuario" class="form-control" formControlName="usuario" [ngClass]="{ 'is-invalid': registerForm.get('usuario')?.invalid && registerForm.get('usuario')?.touched }">
+      <div *ngIf="registerForm.get('usuario')?.invalid && registerForm.get('usuario')?.touched" class="invalid-feedback">
+        Usuario es requerido.
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="pass">Contraseña</label>
+      <input type="password" id="pass" class="form-control" formControlName="pass" [ngClass]="{ 'is-invalid': registerForm.get('pass')?.invalid && registerForm.get('pass')?.touched }">
+      <div *ngIf="registerForm.get('pass')?.invalid && registerForm.get('pass')?.touched" class="invalid-feedback">
+        Contraseña es requerida y debe tener al menos 6 caracteres.
+      </div>
+    </div>
+
+    <br>
+    <button type="submit" class="btn btn-primary">Registrar</button>
+  </form>
+</div>

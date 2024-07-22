@@ -1,0 +1,25 @@
+<div ng-app="App" class="page-container">
+  <div class="form-container" ng-class="done">
+    <div class="login-form">
+      <h3>Enter the awesomeness!</h3>
+      <div>
+        <input type="text" placeholder="User" [(ngModel)]="loginRequest.usuario">
+      </div>
+
+      <div>
+        <input type="password" placeholder="Password" [(ngModel)]="loginRequest.pass">
+      </div>
+
+      <button data-loading-btn class="" (click)="onSubmit()">
+        <span data-loaded-msg="Thank you!">Log in</span>
+      </button>
+    </div>
+    <div class="thank-msg">
+      <h3>You are logged in!</h3>
+      <button ng-click="done = ''">Try Again</button>
+    </div>
+    <div class="credits" (click)="goToRegisterForm()">
+      <a >Registrarce</a>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,19 @@
+<h2>Crear Persona</h2>
+<form (ngSubmit)="onSubmit()">
+  <label for="nombres">Nombres</label>
+  <input id="nombres" [(ngModel)]="persona.nombres" name="nombres" required>
+
+  <label for="apellidos">Apellidos</label>
+  <input id="apellidos" [(ngModel)]="persona.apellidos" name="apellidos" required>
+
+  <label for="numeroIdentificacion">Número de Identificación</label>
+  <input id="numeroIdentificacion" [(ngModel)]="persona.numeroIdentificacion" name="numeroIdentificacion" required>
+
+  <label for="email">Email</label>
+  <input id="email" [(ngModel)]="persona.email" name="email" required>
+
+  <label for="tipoIdentificacion">Tipo Identificación</label>
+  <input id="tipoIdentificacion" [(ngModel)]="persona.tipoIdentificacion" name="tipoIdentificacion" required>
+
+  <button type="submit">Crear Persona</button>
+</form>
